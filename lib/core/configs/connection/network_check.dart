@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:furniture_website/app/section/main/main_section.dart';
 import 'package:furniture_website/core/providers/scroll_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -16,9 +17,9 @@ class NChecking extends StatelessWidget {
         final scrollProvider = Provider.of<ScrollProvider>(context);
         if (state is ConnectedSucessState) {
           //  return const MainPage();
-          return Container();
+          return MainPage();
         } else {
-          return Container();
+          return MainPage();
         }
       },
     );

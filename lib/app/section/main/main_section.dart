@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_website/app/section/main/widget/_body.dart';
 import 'package:furniture_website/app/section/main/widget/_navbar_section.dart';
 import 'package:furniture_website/core/color/colors.dart';
 import 'package:furniture_website/core/res/responsive.dart';
@@ -18,6 +19,8 @@ class _MainPageState extends State<MainPage> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(160),
           child: Responsive(web: NavbarWeb(),)),
+
+      body: Body(),
     );
   }
 }

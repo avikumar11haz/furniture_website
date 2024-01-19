@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_website/app/changes/strings.dart';
+import 'package:furniture_website/app/utils/navbar_utils.dart';
+import 'package:furniture_website/app/widgets/navbar_actions_button.dart';
 import 'package:furniture_website/core/color/colors.dart';
 import 'package:sizer/sizer.dart';
 
@@ -23,7 +25,26 @@ class _NavbarWebState extends State<NavbarWeb> {
           Text(logoname, style: TextStyle(
             color: Colors.black, fontSize: screenWidth < 2000 ? 20: 30, fontWeight: FontWeight.w800
           ),),
-
+          Expanded(child: SizedBox()),
+          ...NavBarUtils.names.asMap().entries.map((e) => NavBarActionButton(label: e.value, index: e.key, color: textColor2),),
+          Expanded(child: SizedBox()),
+          SizedBox(
+            height: 3.h,
+            width: 3.w,
+            child: Image.asset('assets/icons/search.png', color: Colors.black,),
+          ),
+          SizedBox(width: 0.5.w,),
+          SizedBox(
+            height: 3.h,
+            width: 3.w,
+            child: Image.asset('assets/icons/cart.png', color: Colors.black,),
+          ),
+          SizedBox(width: 0.5.w,),
+          SizedBox(
+            height: 3.h,
+            width: 3.w,
+            child: Image.asset('assets/icons/user.png', color: Colors.black,),
+          ),
         ],
       ),
     );
