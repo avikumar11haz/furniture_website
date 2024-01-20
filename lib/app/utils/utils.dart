@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_website/app/section/home/home.dart';
+import 'package:furniture_website/app/section/sale/sale.dart';
 import 'package:furniture_website/core/providers/scroll_provider.dart';
 
 class BodyUtils {
@@ -8,7 +9,7 @@ class BodyUtils {
       Home(
           // scrollProvider: scrollProvider,
           ),
-      // Sale(),
+       Sale(),
       // Category(),
       // SignWeb(),
       // Durian(),
