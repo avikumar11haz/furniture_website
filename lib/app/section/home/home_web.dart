@@ -22,71 +22,103 @@ class _HomeWebState extends State<HomeWeb> {
       child: CarouselSlider.builder(
           itemCount: 2,
           itemBuilder: (context, itemIndex, pageViewIndex) => Row(
-            children: [
-              Container(
-                padding: EdgeInsets.only(
-                  left: screenWidth > 2000 ? 20.w : 10.w, right: 5.w,
-                ),
-                width: 50.w,
-                child: Column(
-                  children: [
-                    Text(slideUtils[itemIndex].titel1,style: TextStyle(
-                      fontSize: 30, color: textColor2,
-                    ),),
-                    SizedBox(height: 2.h,),
-                    Text(slideUtils[itemIndex].titel2,style: TextStyle(
-                      fontSize: 60, color: textColor2, fontWeight: FontWeight.w900
-                    ),),
-                    SizedBox(height: 2.h,),
-                    Text.rich(TextSpan(
-                      text: slideUtils[itemIndex].titel3,
-                        style: TextStyle(
-                            fontSize: 40, color: Colors.red, fontWeight: FontWeight.bold
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                      left: screenWidth > 2000 ? 20.w : 10.w,
+                      right: 5.w,
                     ),
+                    width: 50.w,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextSpan(
-                          text: ' '+ slideUtils[itemIndex].titel4,
-                        style: TextStyle(
-                            fontSize: 20, color: textColor2
-                        )),
-                      ]
-                    )),
-                    SizedBox(height: 2.h,),
-                    Text(slideUtils[itemIndex].titel5,
-                        style: TextStyle(
-                            fontSize: 16, color: textColor2
-                        )
-                    ),
-                    SizedBox(height: 2.h,),
-                    SizedBox(
-                      height: 50,
-                      width: 200,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          primary: primaryColor1,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40)
-                          )
+                        Text(
+                          slideUtils[itemIndex].titel1,
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: textColor2,
+                          ),
                         ),
-                        onPressed: (){},
-                        child: Row(
-                          children: [
-                            Text('SHOW NOW',
-                                style: TextStyle(
-                                    fontSize: 20, color: textColor2
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Text(
+                          slideUtils[itemIndex].titel2,
+                          style: TextStyle(
+                              fontSize: 60,
+                              color: textColor2,
+                              fontWeight: FontWeight.w900),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Text.rich(TextSpan(
+                            text: slideUtils[itemIndex].titel3,
+                            style: TextStyle(
+                                fontSize: 40,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold),
+                            children: [
+                              TextSpan(
+                                  text: ' ' + slideUtils[itemIndex].titel4,
+                                  style: TextStyle(
+                                      fontSize: 20, color: textColor2)),
+                            ])),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        Text(slideUtils[itemIndex].titel5,
+                            style: TextStyle(fontSize: 16, color: textColor2)),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        SizedBox(
+                          height: 50,
+                          width: 200,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                primary: primaryColor1,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40))),
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text('SHOW NOW',
+                                    style: TextStyle(
+                                        fontSize: 20, color: textColor2)),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.black,
                                 )
+                              ],
                             ),
-                            Icon(Icons.arrow_forward_ios, color: Colors.black,)
-                          ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 50.w,
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: 70.h,
+                          decoration: BoxDecoration(
+                              color: slideUtils[itemIndex].color,
+                              shape: BoxShape.circle),
                         ),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                        Image.asset(
+                          slideUtils[itemIndex].img,
+                          height: 80.h,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
           options: CarouselOptions(
             height: 100.h,
             aspectRatio: 2.0,
