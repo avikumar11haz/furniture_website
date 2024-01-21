@@ -19,30 +19,48 @@ class _SignWebState extends State<SignWeb> {
       child: Container(
         padding: EdgeInsets.only(left: 10.w, top: 5.h, bottom: 5.h, right: 5.w),
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(30),
-            bottomRight: Radius.circular(30),
-          ),
-          color: secondaryColor1
-        ),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+            color: secondaryColor1),
         child: Row(
           children: [
-            Expanded(child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Expanded(
+                child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(signDescription, style: const TextStyle(
-                  fontSize: 25, color: textColor2,
-                ),),
-                SizedBox(height: 1.h,),
-                Text(signDescription2, style: const TextStyle(
-                  fontSize: 70, color: textColor2, fontWeight: FontWeight.w900
-                ),),
-                SizedBox(height: 1.h,),
-                Text(signDescription3, style: const TextStyle(
-                  fontSize: 25, color: textColor2,
-                ),),
-                SizedBox(height: 2.h,),
+                Text(
+                  signDescription,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    color: textColor2,
+                  ),
+                ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                Text(
+                  signDescription2,
+                  style: const TextStyle(
+                      fontSize: 70,
+                      color: textColor2,
+                      fontWeight: FontWeight.w900),
+                ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                Text(
+                  signDescription3,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    color: textColor2,
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                ),
                 Container(
                   height: 50,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -54,17 +72,18 @@ class _SignWebState extends State<SignWeb> {
                     decoration: InputDecoration(
                       hintText: 'Name',
                       hintStyle: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16
-                      ),
+                          color: Colors.black54,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16),
                       disabledBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                     ),
                   ),
                 ),
-                SizedBox(height: 1.h,),
+                SizedBox(
+                  height: 1.h,
+                ),
                 Container(
                   height: 50,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -78,16 +97,53 @@ class _SignWebState extends State<SignWeb> {
                       hintStyle: TextStyle(
                           color: Colors.black54,
                           fontWeight: FontWeight.w600,
-                          fontSize: 16
-                      ),
+                          fontSize: 16),
                       disabledBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 1.h,
+                ),
+                SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        primary: primaryColor1,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40))),
+                    onPressed: () {},
+                    child: const Text('SIGN UP NOW',
+                        style: TextStyle(fontSize: 20, color: textColor2)),
+                  ),
+                ),
+                SizedBox(
+                  height: 3.h,
+                ),
+                Text(
+                  signDescription4,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: textColor2,
+                  ),
+                ),
               ],
-            ))
+            )),
+            const SizedBox(
+              width: 30,
+            ),
+            Expanded(
+                flex: 3,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: Image.asset(
+                    'assets/images/signup.png',
+                    fit: BoxFit.cover,
+                  ),
+                ))
           ],
         ),
       ),
