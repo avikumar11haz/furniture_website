@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_website/app/utils/category_utils.dart';
 import 'package:furniture_website/core/color/colors.dart';
 import 'package:sizer/sizer.dart';
 
@@ -65,7 +66,9 @@ class _CategoryWebState extends State<CategoryWeb> {
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               controller: _pageController,
-              children: [],
+              children: [
+                Page1(),
+              ],
               onPageChanged: (index) {
                 setState(() {
                   _selectedIndex = index;
@@ -75,6 +78,38 @@ class _CategoryWebState extends State<CategoryWeb> {
           ))
         ],
       ),
+    );
+  }
+  Page1(){
+    return Column(
+      children: [
+        Expanded(child: GridView.builder(
+          itemCount: categoryUtils.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          crossAxisSpacing: 40,
+          mainAxisSpacing: 40
+        ), itemBuilder: (context, index){
+          return Column(children: [
+            Expanded(child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 30, color: categoryUtils[index].color,
+                    )
+                  ),
+                ),
+                Image.asset(categoryUtils[index].img),
+              ],
+            )),
+            const SizedBox(height: 20,),
+            Text(categoryUtils[index].text,style: const TextStyle(color: textColor2),)
+          ],);
+        }))
+      ],
     );
   }
 }
