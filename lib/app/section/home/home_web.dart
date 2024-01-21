@@ -35,7 +35,7 @@ class _HomeWebState extends State<HomeWeb> {
                       children: [
                         Text(
                           slideUtils[itemIndex].titel1,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 30,
                             color: textColor2,
                           ),
@@ -45,7 +45,7 @@ class _HomeWebState extends State<HomeWeb> {
                         ),
                         Text(
                           slideUtils[itemIndex].titel2,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 60,
                               color: textColor2,
                               fontWeight: FontWeight.w900),
@@ -55,21 +55,21 @@ class _HomeWebState extends State<HomeWeb> {
                         ),
                         Text.rich(TextSpan(
                             text: slideUtils[itemIndex].titel3,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 40,
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold),
                             children: [
                               TextSpan(
-                                  text: ' ' + slideUtils[itemIndex].titel4,
-                                  style: TextStyle(
+                                  text: ' ${slideUtils[itemIndex].titel4}',
+                                  style: const TextStyle(
                                       fontSize: 20, color: textColor2)),
                             ])),
                         SizedBox(
                           height: 2.h,
                         ),
                         Text(slideUtils[itemIndex].titel5,
-                            style: TextStyle(fontSize: 16, color: textColor2)),
+                            style: const TextStyle(fontSize: 16, color: textColor2)),
                         SizedBox(
                           height: 2.h,
                         ),
@@ -83,7 +83,7 @@ class _HomeWebState extends State<HomeWeb> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40))),
                             onPressed: () {},
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text('SHOW NOW',
@@ -103,6 +103,7 @@ class _HomeWebState extends State<HomeWeb> {
                   SizedBox(
                     width: 50.w,
                     child: Stack(
+                      alignment: Alignment.center,
                       children: [
                         Container(
                           height: 70.h,
