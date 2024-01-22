@@ -28,7 +28,7 @@ class _SignWebState extends State<SignWeb> {
           children: [
             Expanded(
                 child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -117,7 +117,7 @@ class _SignWebState extends State<SignWeb> {
                             borderRadius: BorderRadius.circular(40))),
                     onPressed: () {},
                     child: const Text('SIGN UP NOW',
-                        style: TextStyle(fontSize: 20, color: textColor2)),
+                        style: TextStyle(fontSize: 16, color: textColor2)),
                   ),
                 ),
                 SizedBox(
