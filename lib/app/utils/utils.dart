@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_website/app/section/category/category.dart';
+import 'package:furniture_website/app/section/durian/durian.dart';
 import 'package:furniture_website/app/section/home/home.dart';
 import 'package:furniture_website/app/section/sale/sale.dart';
 import 'package:furniture_website/app/section/sign/sign_web.dart';
@@ -14,7 +15,7 @@ class BodyUtils {
        Sale(),
       Category(),
       SignWeb(),
-      // Durian(),
+      Durian(),
       // FooterWeb()
     ];
   }
