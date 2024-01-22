@@ -34,9 +34,10 @@ class _CategoryWebState extends State<CategoryWeb> {
         bottom: 5.h,
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 80.h,
+            height: screenWidth > 2000 ? 80.h : 60.h,
             child: NavigationRail(
               extended: true,
               minWidth: screenWidth > 2000 ? 80 : 70,
@@ -56,14 +57,14 @@ class _CategoryWebState extends State<CategoryWeb> {
               labelType: NavigationRailLabelType.none,
               destinations: [
                 ..._tabs.asMap().entries.map((e) => NavigationRailDestination(
-                    icon: SizedBox(), label: Text(e.value)))
+                    icon: const SizedBox(), label: Text(e.value)))
               ],
             ),
           ),
           Expanded(child: Container(
-            height: 80.h,
+            height: screenWidth > 2000 ? 80.h : 60.h,
             child: PageView(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               controller: _pageController,
               children: [
