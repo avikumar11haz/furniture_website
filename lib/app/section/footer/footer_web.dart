@@ -26,12 +26,85 @@ class _FooterWebState extends State<FooterWeb> {
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [rowHelpful(), rowContact()],
+              children: [rowHelpful(), rowContact(), rowSign()],
             ),
           )
         ],
       ),
     );
+  }
+
+  rowSign(){
+    return Expanded(child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Sign Up Now',style: TextStyle(
+          color: textColor2, fontSize: 20, fontWeight: FontWeight.bold,
+        ),),
+        SizedBox(height: 4.h,),
+        Container(
+          height: 50,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF1DEBD),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const TextField(
+            decoration: InputDecoration(
+              hintText: 'Name',
+              hintStyle: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16),
+              disabledBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        Container(
+          height: 50,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF1DEBD),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: const TextField(
+            decoration: InputDecoration(
+              hintText: 'Email',
+              hintStyle: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16),
+              disabledBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        SizedBox(
+          height: 50,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                elevation: 0,
+                primary: primaryColor1,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40))),
+            onPressed: () {},
+            child: Center(
+              child: const Text('SIGN UP NOW',
+                  style: TextStyle(fontSize: 16, color: textColor2)),
+            ),
+          ),
+        ),
+      ],
+    ));
   }
 
   rowHelpful() {
@@ -89,6 +162,7 @@ class _FooterWebState extends State<FooterWeb> {
       ],
     ));
   }
+
 
   rowContact() {
     return Expanded(
