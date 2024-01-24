@@ -11,13 +11,13 @@ class BodyUtils {
   static List<Widget> views(ScrollProvider scrollProvider) {
     return [
       Home(
-          // scrollProvider: scrollProvider,
-          ),
-       Sale(),
-      Category(),
-      SignWeb(),
-      Durian(),
-      FooterWeb()
+        scrollProvider: scrollProvider,
+      ),
+      const Sale(),
+      const Category(),
+      const SignWeb(),
+      const Durian(),
+      const FooterWeb()
     ];
   }
 }

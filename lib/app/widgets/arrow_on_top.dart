@@ -29,19 +29,19 @@ class ArrowOnTopState extends State<ArrowOnTop> {
           onTap: () => scrollProvider.jumpTo(0),
           child: AvatarGlow(
             glowColor: Colors.black,
-            endRadius: Responsive.isDesktop(context) ? 80 : 40,
+            //endRadius: Responsive.isDesktop(context) ? 80 : 40,
             child: Material(
               // Replace this child with your own
               elevation: 8.0,
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
               child: CircleAvatar(
                 backgroundColor: Colors.black,
+                radius: Responsive.isDesktop(context) ? 40 : 30,
                 child: Icon(
                   Icons.arrow_upward,
                   color: Colors.white,
                   size: Responsive.isDesktop(context) ? 30 : 20,
                 ),
-                radius: Responsive.isDesktop(context) ? 40 : 30,
               ),
             ),
           ),

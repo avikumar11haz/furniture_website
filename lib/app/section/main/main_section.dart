@@ -22,8 +22,9 @@ class _MainPageState extends State<MainPage> {
     // TODO: implement initState
     super.initState();
 
-    myListener = (){
-      final positions = widget.scrollProvider.itemPositionsListener.itemPositions.value;
+    myListener = () {
+      final positions =
+          widget.scrollProvider.itemPositionsListener.itemPositions.value;
       final firstVisible = positions.first.index;
       final lastVisible = positions.last.index;
 
@@ -33,31 +34,30 @@ class _MainPageState extends State<MainPage> {
     };
 
     //Add myListener as a listener
-    widget.scrollProvider.itemPositionsListener.itemPositions.addListener(myListener);
+    widget.scrollProvider.itemPositionsListener.itemPositions
+        .addListener(myListener);
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor2,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(160),
-          child: Responsive(web: NavbarWeb(),)),
-
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(160),
+          child: Responsive(
+            web: NavbarWeb(),
+          )),
       body: Stack(
-        children: [
-          Body(), if(isShow) ArrowOnTop()
-        ],
+        children: [const Body(), if (isShow) const ArrowOnTop()],
       ),
     );
   }
+
   @override
   void dispose() {
     // Remove myListener when the widget is disposed.
-    widget.scrollProvider.itemPositionsListener.itemPositions.removeListener(myListener);
+    widget.scrollProvider.itemPositionsListener.itemPositions
+        .removeListener(myListener);
     super.dispose();
   }
 }

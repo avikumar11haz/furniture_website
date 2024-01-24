@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_website/app/changes/strings.dart';
 import 'package:furniture_website/core/color/colors.dart';
 import 'package:sizer/sizer.dart';
 
@@ -28,20 +29,37 @@ class _FooterWebState extends State<FooterWeb> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [rowHelpful(), rowContact(), rowSign()],
             ),
+          ),
+          Container(
+            width: 100.w,
+            color: const Color(0xFFD9D9D9),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+            child: Text(
+              footerCopyright,
+              style: const TextStyle(color: textColor2, fontSize: 18),
+            ),
           )
         ],
       ),
     );
   }
 
-  rowSign(){
-    return Expanded(child: Column(
+  rowSign() {
+    return Expanded(
+        child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Sign Up Now',style: TextStyle(
-          color: textColor2, fontSize: 20, fontWeight: FontWeight.bold,
-        ),),
-        SizedBox(height: 4.h,),
+        const Text(
+          'Sign Up Now',
+          style: TextStyle(
+            color: textColor2,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          height: 4.h,
+        ),
         Container(
           height: 50,
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -97,8 +115,8 @@ class _FooterWebState extends State<FooterWeb> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40))),
             onPressed: () {},
-            child: Center(
-              child: const Text('SIGN UP NOW',
+            child: const Center(
+              child: Text('SIGN UP NOW',
                   style: TextStyle(fontSize: 16, color: textColor2)),
             ),
           ),
@@ -162,7 +180,6 @@ class _FooterWebState extends State<FooterWeb> {
       ],
     ));
   }
-
 
   rowContact() {
     return Expanded(
