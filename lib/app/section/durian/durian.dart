@@ -7,6 +7,6 @@ class Durian extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive(web: const DurianWeb());
+    return const Responsive(web: DurianWeb());
   }
 }

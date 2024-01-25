@@ -21,7 +21,7 @@ class _DurianWebState extends State<DurianWeb> {
         children: [
           Text(
             durianDescription,
-            style: TextStyle(
+            style: const TextStyle(
                 color: textColor2, fontSize: 25, fontWeight: FontWeight.bold),
           ),
           SizedBox(
@@ -47,7 +47,7 @@ class _DurianWebState extends State<DurianWeb> {
                             ),
                             Text(
                               durianutils[index].titel,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: textColor2,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
@@ -57,7 +57,7 @@ class _DurianWebState extends State<DurianWeb> {
                             ),
                             Text(
                               durianutils[index].description,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: textColor2,
                                 fontSize: 16,
                               ),
