@@ -25,9 +25,9 @@ class _NavbarWebState extends State<NavbarWeb> {
           Text(logoname, style: TextStyle(
             color: Colors.black, fontSize: screenWidth < 2000 ? 20: 30, fontWeight: FontWeight.w800
           ),),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           ...NavBarUtils.names.asMap().entries.map((e) => NavBarActionButton(label: e.value, index: e.key, color: textColor2),),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           SizedBox(
             height: 3.h,
             width: 3.w,
