@@ -61,14 +61,15 @@ class _CategoryWebState extends State<CategoryWeb> {
               ],
             ),
           ),
-          Expanded(child: Container(
+          Expanded(
+              child: SizedBox(
             height: screenWidth > 2000 ? 80.h : 60.h,
             child: PageView(
               physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               controller: _pageController,
               children: [
-                Page1(),
+                page1(),
               ],
               onPageChanged: (index) {
                 setState(() {
@@ -81,35 +82,46 @@ class _CategoryWebState extends State<CategoryWeb> {
       ),
     );
   }
-  Page1(){
+
+  page1() {
     return Column(
       children: [
-        Expanded(child: GridView.builder(
-          itemCount: categoryUtils.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: 40,
-          mainAxisSpacing: 40
-        ), itemBuilder: (context, index){
-          return Column(children: [
-            Expanded(child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      width: 30, color: categoryUtils[index].color,
+        Expanded(
+          child: GridView.builder(
+              itemCount: categoryUtils.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4, crossAxisSpacing: 40, mainAxisSpacing: 40),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Expanded(
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 30,
+                                color: categoryUtils[index].color,
+                              ),
+                            ),
+                          ),
+                          Image.asset(categoryUtils[index].img),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      categoryUtils[index].text,
+                      style: const TextStyle(color: textColor2),
                     )
-                  ),
-                ),
-                Image.asset(categoryUtils[index].img),
-              ],
-            )),
-            const SizedBox(height: 20,),
-            Text(categoryUtils[index].text,style: const TextStyle(color: textColor2),)
-          ],);
-        }))
+                  ],
+                );
+              }),
+        )
       ],
     );
   }

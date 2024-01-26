@@ -7,6 +7,6 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive(web: CategoryWeb());
+    return const Responsive(web: CategoryWeb());
   }
 }
