@@ -15,15 +15,13 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     final scrollProvider = Provider.of<ScrollProvider>(context);
-    return Container(
-      child: ScrollablePositionedList.builder(
-        itemCount: BodyUtils.views(scrollProvider).length,
-        itemBuilder: (context, index) => BodyUtils.views(scrollProvider)[index],
-        itemScrollController: scrollProvider.itemScrollController,
-        scrollOffsetController: scrollProvider.scrollOffsetController,
-        itemPositionsListener: scrollProvider.itemPositionsListener,
-        scrollOffsetListener: scrollProvider.scrollOffsetListener,
-      ),
+    return ScrollablePositionedList.builder(
+      itemCount: BodyUtils.views(scrollProvider).length,
+      itemBuilder: (context, index) => BodyUtils.views(scrollProvider)[index],
+      itemScrollController: scrollProvider.itemScrollController,
+      scrollOffsetController: scrollProvider.scrollOffsetController,
+      itemPositionsListener: scrollProvider.itemPositionsListener,
+      scrollOffsetListener: scrollProvider.scrollOffsetListener,
     );
   }
 }
