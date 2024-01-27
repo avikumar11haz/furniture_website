@@ -7,6 +7,8 @@ class Sale extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive(web: SaleWeb());
+    return const Responsive(
+      web: SaleWeb(),
+    );
   }
 }

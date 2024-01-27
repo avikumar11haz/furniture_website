@@ -18,32 +18,53 @@ class _NavbarWebState extends State<NavbarWeb> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: 80,
-      padding: EdgeInsets.symmetric(horizontal: screenWidth > 2000 ? 20.w: 10.w, vertical: 10),
+      padding: EdgeInsets.symmetric(
+          horizontal: screenWidth > 2000 ? 20.w : 10.w, vertical: 10),
       color: primaryColor2,
       child: Row(
         children: [
-          Text(logoname, style: TextStyle(
-            color: Colors.black, fontSize: screenWidth < 2000 ? 20: 30, fontWeight: FontWeight.w800
-          ),),
-          const Expanded(child: SizedBox()),
-          ...NavBarUtils.names.asMap().entries.map((e) => NavBarActionButton(label: e.value, index: e.key, color: textColor2),),
-          const Expanded(child: SizedBox()),
-          SizedBox(
-            height: 3.h,
-            width: 3.w,
-            child: Image.asset('assets/icons/search.png', color: Colors.black,),
+          Text(
+            logoname,
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: screenWidth < 2000 ? 20 : 30,
+                fontWeight: FontWeight.w800),
           ),
-          SizedBox(width: 0.5.w,),
+          const Expanded(child: SizedBox()),
+          ...NavBarUtils.names.asMap().entries.map(
+                (e) => NavBarActionButton(
+                    label: e.value, index: e.key, color: textColor2),
+              ),
+          const Expanded(child: SizedBox()),
           SizedBox(
             height: 3.h,
             width: 3.w,
-            child: Image.asset('assets/icons/cart.png', color: Colors.black,),
+            child: Image.asset(
+              'assets/icons/search.png',
+              color: Colors.black,
+            ),
           ),
-          SizedBox(width: 0.5.w,),
+          SizedBox(
+            width: 0.5.w,
+          ),
           SizedBox(
             height: 3.h,
             width: 3.w,
-            child: Image.asset('assets/icons/user.png', color: Colors.black,),
+            child: Image.asset(
+              'assets/icons/cart.png',
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(
+            width: 0.5.w,
+          ),
+          SizedBox(
+            height: 3.h,
+            width: 3.w,
+            child: Image.asset(
+              'assets/icons/user.png',
+              color: Colors.black,
+            ),
           ),
         ],
       ),

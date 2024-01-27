@@ -43,10 +43,11 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: primaryColor2,
       appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(160),
-          child: Responsive(
-            web: NavbarWeb(),
-          )),
+        preferredSize: Size.fromHeight(160),
+        child: Responsive(
+          web: NavbarWeb(),
+        ),
+      ),
       body: Stack(
         children: [const Body(), if (isShow) const ArrowOnTop()],
       ),
