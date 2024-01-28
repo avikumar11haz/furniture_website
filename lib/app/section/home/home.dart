@@ -8,6 +8,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Responsive(web: HomeWeb());
+    return const Responsive(
+      web: HomeWeb(),
+    );
   }
 }
