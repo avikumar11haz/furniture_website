@@ -49,7 +49,10 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
       body: Stack(
-        children: [const Body(), if (isShow) const ArrowOnTop()],
+        children: [
+          const Body(),
+          if (isShow) const ArrowOnTop(),
+        ],
       ),
     );
   }
