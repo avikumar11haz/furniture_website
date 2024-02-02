@@ -28,14 +28,14 @@ class _NavbarWebState extends State<NavbarWeb> {
             style: TextStyle(
                 color: Colors.black,
                 fontSize: screenWidth < 2000 ? 20 : 30,
-                fontWeight: FontWeight.w800),
+                fontWeight: FontWeight.w800,),
           ),
           const Expanded(
             child: SizedBox(),
           ),
           ...NavBarUtils.names.asMap().entries.map(
                 (e) => NavBarActionButton(
-                    label: e.value, index: e.key, color: textColor2),
+                    label: e.value, index: e.key, color: textColor2,),
               ),
           const Expanded(child: SizedBox()),
           SizedBox(

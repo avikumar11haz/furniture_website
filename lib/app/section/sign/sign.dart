@@ -7,6 +7,8 @@ class Sign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Responsive(web: const SignWeb());
+    return const Responsive(
+      web: SignWeb(),
+    );
   }
 }
